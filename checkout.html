@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Оформление заказа</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-top">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 4H11L21 14L14 21L4 11V4Z"></path>
+                    <circle cx="8" cy="8" r="1.5"></circle>
+                </svg>
+            </span>
+            <span>БАРАХОЛКА</span>
+        </a>
+
+        <form class="search-form">
+
+            <select aria-label="Категория поиска">
+                <option>Все категории</option>
+                <option>Электроника</option>
+                <option>Одежда</option>
+                <option>Дом и быт</option>
+                <option>Книги</option>
+            </select>
+
+            <input
+                    type="search"
+                    placeholder="Поиск товара..."
+                    aria-label="Поиск товара"
+            >
+
+            <button type="submit">⌕</button>
+
+        </form>
+
+        <div class="header-actions">
+
+            <a href="cart.html" class="cart-link">🛒</a>
+
+            <a href="#" class="account-button">
+                Мой аккаунт
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <nav class="main-nav">
+
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="catalog.html">Новинки</a>
+        <a href="catalog.html">Популярное</a>
+        <a href="catalog.html">Скидки</a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- Заголовок страницы -->
+
+    <section class="page-heading">
+
+        <div class="page-heading-content">
+
+            <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
+
+            <nav class="breadcrumbs">
+
+                <a href="index.html">Главная</a>
+
+                <span>/</span>
+
+                <a href="cart.html">Корзина</a>
+
+                <span>/</span>
+
+                <strong>Оформление заказа</strong>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- Основная форма оформления заказа -->
+
+    <form class="checkout-page">
+
+
+        <!-- ШАГ 1 -->
+
+        <section class="checkout-step">
+
+            <h2>
+                01. СПОСОБ ОФОРМЛЕНИЯ
+            </h2>
+
+
+            <div class="checkout-method">
+
+                <div class="checkout-choice">
+
+                    <h3>Оформление заказа</h3>
+
+                    <p>
+                        Выберите удобный вариант оформления.
+                    </p>
+
+
+                    <label>
+                        <input
+                                type="radio"
+                                name="customer-type"
+                                value="guest"
+                                checked
+                        >
+
+                        Оформить как гость
+                    </label>
+
+
+                    <label>
+                        <input
+                                type="radio"
+                                name="customer-type"
+                                value="registered"
+                        >
+
+                        Я зарегистрированный пользователь
+                    </label>
+
+
+                    <p class="checkout-note">
+                        Зарегистрированные пользователи могут
+                        быстрее оформлять последующие заказы.
+                    </p>
+
+                </div>
+
+
+                <div class="checkout-login">
+
+                    <h3>Уже есть аккаунт?</h3>
+
+                    <p>
+                        Войдите в свою учётную запись.
+                    </p>
+
+
+                    <label for="login-email">
+                        E-mail
+                    </label>
+
+                    <input
+                            id="login-email"
+                            type="email"
+                            placeholder="example@mail.ru"
+                    >
+
+
+                    <label for="login-password">
+                        Пароль
+                    </label>
+
+                    <input
+                            id="login-password"
+                            type="password"
+                            minlength="6"
+                            placeholder="Пароль"
+                    >
+
+
+                    <button type="button">
+                        Войти
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ШАГ 2 -->
+
+        <section class="checkout-step">
+
+            <h2>
+                02. АДРЕС ДОСТАВКИ
+            </h2>
+
+
+            <div class="checkout-address">
+
+                <div class="checkout-field">
+
+                    <label for="first-name">
+                        Имя
+                    </label>
+
+                    <input
+                            id="first-name"
+                            type="text"
+                            minlength="2"
+                            maxlength="30"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="last-name">
+                        Фамилия
+                    </label>
+
+                    <input
+                            id="last-name"
+                            type="text"
+                            minlength="2"
+                            maxlength="40"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="checkout-email">
+                        E-mail
+                    </label>
+
+                    <input
+                            id="checkout-email"
+                            type="email"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="phone">
+                        Телефон
+                    </label>
+
+                    <input
+                            id="phone"
+                            type="tel"
+                            placeholder="+7 999 123-45-67"
+                            pattern="\+7\s[0-9]{3}\s[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                            title="Введите номер в формате +7 999 123-45-67"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="country">
+                        Страна
+                    </label>
+
+                    <select
+                            id="country"
+                            required
+                    >
+
+                        <option value="">
+                            Выберите страну
+                        </option>
+
+                        <option value="Россия">
+                            Россия
+                        </option>
+
+                        <option value="Беларусь">
+                            Беларусь
+                        </option>
+
+                        <option value="Казахстан">
+                            Казахстан
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="city">
+                        Город
+                    </label>
+
+                    <input
+                            id="city"
+                            type="text"
+                            minlength="2"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="checkout-field checkout-field-wide">
+
+                    <label for="address">
+                        Улица и дом
+                    </label>
+
+                    <input
+                            id="address"
+                            type="text"
+                            minlength="5"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="postcode">
+                        Почтовый индекс
+                    </label>
+
+                    <input
+                            id="postcode"
+                            type="text"
+                            pattern="[0-9]{6}"
+                            title="Введите 6 цифр"
+                            required
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ШАГ 3 -->
+
+        <section class="checkout-step">
+
+            <h2>
+                03. СПОСОБ ПОЛУЧЕНИЯ
+            </h2>
+
+
+            <div class="delivery-methods">
+
+
+                <!-- Продавец 1 -->
+
+                <div class="delivery-seller">
+
+                    <div class="delivery-seller-title">
+
+                        <h3>Продавец: Алексей</h3>
+
+                        <p>
+                            Iphone 14 Pro Max
+                        </p>
+
+                    </div>
+
+
+                    <label class="delivery-option">
+
+                        <input
+                                type="radio"
+                                name="delivery-alexey"
+                                value="delivery"
+                                checked
+                        >
+
+                        <span>
+
+                    <strong>Доставка</strong>
+
+                    <small>
+                        Отправка на указанный адрес
+                    </small>
+
+                </span>
+
+                        <b>500 ₽</b>
+
+                    </label>
+
+
+                    <label class="delivery-option">
+
+                        <input
+                                type="radio"
+                                name="delivery-alexey"
+                                value="pickup"
+                        >
+
+                        <span>
+
+                    <strong>Самовывоз</strong>
+
+                    <small>
+                        Получение у продавца
+                    </small>
+
+                </span>
+
+                        <b>Бесплатно</b>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Продавец 2 -->
+
+                <div class="delivery-seller">
+
+                    <div class="delivery-seller-title">
+
+                        <h3>Продавец: Игорь</h3>
+
+                        <p>
+                            Беспроводные наушники
+                        </p>
+
+                    </div>
+
+
+                    <label class="delivery-option">
+
+                        <input
+                                type="radio"
+                                name="delivery-igor"
+                                value="delivery"
+                                checked
+                        >
+
+                        <span>
+
+                    <strong>Доставка</strong>
+
+                    <small>
+                        Отправка на указанный адрес
+                    </small>
+
+                </span>
+
+                        <b>300 ₽</b>
+
+                    </label>
+
+
+                    <label class="delivery-option">
+
+                        <input
+                                type="radio"
+                                name="delivery-igor"
+                                value="pickup"
+                        >
+
+                        <span>
+
+                    <strong>Самовывоз</strong>
+
+                    <small>
+                        Получение у продавца
+                    </small>
+
+                </span>
+
+                        <b>Бесплатно</b>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Продавец 3 -->
+
+                <div class="delivery-seller">
+
+                    <div class="delivery-seller-title">
+
+                        <h3>Продавец: Максим</h3>
+
+                        <p>
+                            Игровая приставка PS5
+                        </p>
+
+                    </div>
+
+
+                    <label class="delivery-option">
+
+                        <input
+                                type="radio"
+                                name="delivery-maxim"
+                                value="delivery"
+                                checked
+                        >
+
+                        <span>
+
+                    <strong>Доставка</strong>
+
+                    <small>
+                        Отправка на указанный адрес
+                    </small>
+
+                </span>
+
+                        <b>600 ₽</b>
+
+                    </label>
+
+
+                    <label class="delivery-option">
+
+                        <input
+                                type="radio"
+                                name="delivery-maxim"
+                                value="pickup"
+                        >
+
+                        <span>
+
+                    <strong>Самовывоз</strong>
+
+                    <small>
+                        Получение у продавца
+                    </small>
+
+                </span>
+
+                        <b>Бесплатно</b>
+
+                    </label>
+
+                </div>
+
+
+                <p class="delivery-note">
+                    Каждый продавец отправляет свой товар отдельно.
+                    Стоимость доставки оплачивается отдельно
+                    и не входит в стоимость товаров.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ШАГ 4 -->
+
+        <section class="checkout-step">
+
+            <h2>
+                04. СПОСОБ ОПЛАТЫ
+            </h2>
+
+
+            <div class="payment-methods">
+
+                <label>
+                    <input
+                            type="radio"
+                            name="payment"
+                            value="card"
+                            checked
+                    >
+
+                    Банковская карта
+                </label>
+
+
+                <label>
+                    <input
+                            type="radio"
+                            name="payment"
+                            value="cash"
+                    >
+
+                    Оплата при получении
+                </label>
+
+            </div>
+
+
+            <div class="card-fields">
+
+                <div class="checkout-field checkout-field-wide">
+
+                    <label for="card-number">
+                        Номер карты
+                    </label>
+
+                    <input
+                            id="card-number"
+                            type="text"
+                            maxlength="16"
+                            pattern="[0-9]{16}"
+                            placeholder="0000000000000000"
+                            title="Введите 16 цифр номера карты"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="card-date">
+                        Срок действия
+                    </label>
+
+                    <input
+                            id="card-date"
+                            type="text"
+                            maxlength="5"
+                            pattern="[0-9]{2}/[0-9]{2}"
+                            placeholder="MM/ГГ"
+                            title="Введите срок действия в формате MM/ГГ"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="card-cvv">
+                        CVV
+                    </label>
+
+                    <input
+                            id="card-cvv"
+                            type="password"
+                            maxlength="3"
+                            pattern="[0-9]{3}"
+                            placeholder="***"
+                            title="Введите 3 цифры"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ШАГ 5 -->
+
+        <section class="checkout-step">
+
+            <h2>
+                05. ВАШ ЗАКАЗ
+            </h2>
+
+
+            <div class="order-review">
+
+                <div class="order-row order-title">
+
+                    <span>Товар</span>
+
+                    <span>Стоимость</span>
+
+                </div>
+
+
+                <div class="order-row">
+
+        <span>
+            Iphone 14 Pro Max
+            <small>Продавец: Алексей</small>
+        </span>
+
+                    <span>45 500 ₽</span>
+
+                </div>
+
+
+                <div class="order-row">
+
+        <span>
+            Беспроводные наушники
+            <small>Продавец: Игорь</small>
+        </span>
+
+                    <span>2 300 ₽</span>
+
+                </div>
+
+
+                <div class="order-row">
+
+        <span>
+            Игровая приставка PS5
+            <small>Продавец: Максим</small>
+        </span>
+
+                    <span>65 000 ₽</span>
+
+                </div>
+
+
+                <div class="order-row">
+
+                    <span>Доставка</span>
+
+                    <span>Оплачивается отдельно</span>
+
+                </div>
+
+
+                <div class="order-row order-total">
+
+                    <strong>ИТОГО ЗА ТОВАРЫ</strong>
+
+                    <strong>112 800 ₽</strong>
+
+                </div>
+
+            </div>
+
+
+            <label class="checkout-agreement">
+
+                <input
+                        type="checkbox"
+                        required
+                >
+
+                Я подтверждаю правильность указанных данных
+                и согласен с условиями оформления заказа.
+
+            </label>
+
+
+            <button
+                    class="checkout-button"
+                    type="submit"
+            >
+                ОФОРМИТЬ ЗАКАЗ
+            </button>
+
+        </section>
+
+    </form>
+
+
+    <!-- Подписка -->
+
+    <section class="subscribe">
+
+        <div class="subscribe-content">
+
+            <div class="review">
+
+                <div class="review-avatar">
+                    Б
+                </div>
+
+                <div class="review-text">
+
+                    <p>
+                        «Нашёл здесь нужную технику намного дешевле,
+                        чем в обычном магазине. Удобно и просто».
+                    </p>
+
+                    <strong>Богдан</strong>
+
+                    <small>
+                        Пользователь барахолки
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="subscribe-form">
+
+                <h2>ПОДПИШИТЕСЬ</h2>
+
+                <p>
+                    Получайте информацию о новых объявлениях
+                </p>
+
+                <form>
+
+                    <input
+                            type="email"
+                            placeholder="Введите ваш e-mail"
+                            required
+                    >
+
+                    <button type="submit">
+                        Подписаться
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-about">
+
+            <a href="index.html" class="footer-logo">
+                <span class="logo-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4H11L21 14L14 21L4 11V4Z"></path>
+                        <circle cx="8" cy="8" r="1.5"></circle>
+                    </svg>
+                </span>
+                <span>БАРАХОЛКА</span>
+            </a>
+
+
+            <p>
+                Интернет-барахолка для покупки и продажи
+                новых и подержанных вещей.
+            </p>
+
+            <p>
+                Находите нужные товары по выгодным ценам
+                и выбирайте предложения пользователей.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>КОМПАНИЯ</h3>
+
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="#">О нас</a>
+            <a href="#">Контакты</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>КАТЕГОРИИ</h3>
+
+            <a href="catalog.html">Электроника</a>
+            <a href="catalog.html">Одежда</a>
+            <a href="catalog.html">Книги</a>
+            <a href="catalog.html">Для дома</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>ПОМОЩЬ</h3>
+
+            <a href="#">Как купить</a>
+            <a href="#">Как продать</a>
+            <a href="#">Оплата</a>
+            <a href="#">Доставка</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-content">
+
+            <p>
+                © 2026 Барахолка. Учебный проект.
+            </p>
+
+            <div class="socials">
+
+                <a href="#" aria-label="ВКонтакте" title="ВКонтакте">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12.7 17.5C7.3 17.5 4.2 13.8 4 7.2H6.8C6.9 12 9 14 10.6 14.4V7.2H13.3V11.3C14.9 11.1 16.5 9.2 17 7.2H19.7C19.3 9.7 17.4 11.6 16.1 12.3C17.4 12.9 19.5 14.5 20.2 17.5H17.2C16.6 15.6 15.1 14.1 13.3 13.9V17.5H12.7Z"></path>
+                    </svg>
+                </a>
+
+                <a href="#" aria-label="Telegram" title="Telegram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21.6 3.8L18.4 19C18.2 20.1 17.5 20.3 16.7 19.8L11.8 16.2L9.4 18.5C9.1 18.8 8.9 19 8.4 19L8.8 14L17.9 5.8C18.3 5.4 17.8 5.2 17.3 5.5L6.1 12.6L1.3 11.1C0.3 10.8 0.3 10.1 1.5 9.6L20.4 2.3C21.3 2 22 2.5 21.6 3.8Z"></path>
+                    </svg>
+                </a>
+
+                <a href="#" aria-label="YouTube" title="YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21.6 7.1C21.4 6.1 20.6 5.3 19.6 5.1C17.9 4.7 12 4.7 12 4.7C12 4.7 6.1 4.7 4.4 5.1C3.4 5.3 2.6 6.1 2.4 7.1C2 8.8 2 12 2 12C2 12 2 15.2 2.4 16.9C2.6 17.9 3.4 18.7 4.4 18.9C6.1 19.3 12 19.3 12 19.3C12 19.3 17.9 19.3 19.6 18.9C20.6 18.7 21.4 17.9 21.6 16.9C22 15.2 22 12 22 12C22 12 22 8.8 21.6 7.1ZM9.9 15.1V8.9L15.3 12L9.9 15.1Z"></path>
+                    </svg>
+                </a>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
